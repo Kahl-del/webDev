@@ -1,0 +1,57 @@
+<ul ngbNav [(activeId)]="celsius" class="nav-tabs" id=tipotemp>
+    <li [ngbNavItem]="1">
+        <a ngbNavLink>Celsius</a>
+    </li>
+    <li [ngbNavItem]="2">
+        <a ngbNavLink>Fahrenheit</a>
+    </li>
+</ul>
+
+<ul ngbNav [(activeId)]="activeId" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Valparaiso</a>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Metropolitana</a>
+    </li>
+    <li [ngbNavItem]="3">
+      <a ngbNavLink>Biobio</a>
+    </li>
+    <li [ngbNavItem]="4">
+      <a ngbNavLink>Araucania</a>
+    </li>
+</ul>
+
+<div *ngIf="activeId==1">
+    <ul id=dias>
+        <li *ngFor="let item of clima[0].clima">
+            <div>{{item.nombre}}</div>
+            <div [ngSwitch]="item.idtipo">
+                <img *ngSwitchCase="1" src="https://img.icons8.com/external-vitaliy-gorbachev-flat-vitaly-gorbachev/58/000000/external-sunny-weather-vitaliy-gorbachev-flat-vitaly-gorbachev.png"/>
+                <img *ngSwitchCase="2" src="https://img.icons8.com/color/48/000000/rain--v1.png"/>
+                <img *ngSwitchCase="3" src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-storm-weather-justicon-flat-justicon-1.png"/>
+                <img *ngSwitchCase="4" src="https://img.icons8.com/external-vitaliy-gorbachev-flat-vitaly-gorbachev/58/000000/external-cloudy-weather-vitaliy-gorbachev-flat-vitaly-gorbachev-1.png"/>
+            </div>
+            <div *ngIf="celsius == 1">{{item.temp}} °C</div>
+            <div *ngIf="celsius == 2">{{(item.temp * 1.8) + 32}} °F</div>
+            <div>{{item.tipo}}</div>
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="activeId==2">
+    <ul id=dias>
+        <li *ngFor="let item of clima[1].clima">
+            <div>{{item.nombre}}</div>
+            <div [ngSwitch]="item.idtipo">
+                <img *ngSwitchCase="1" src="https://img.icons8.com/external-vitaliy-gorbachev-flat-vitaly-gorbachev/58/000000/external-sunny-weather-vitaliy-gorbachev-flat-vitaly-gorbachev.png"/>
+                <img *ngSwitchCase="2" src="https://img.icons8.com/color/48/000000/rain--v1.png"/>
+                <img *ngSwitchCase="3" src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-storm-weather-justicon-flat-justicon-1.png"/>
+                <img *ngSwitchCase="4" src="https://img.icons8.com/external-vitaliy-gorbachev-flat-vitaly-gorbachev/58/000000/external-cloudy-weather-vitaliy-gorbachev-flat-vitaly-gorbachev-1.png"/>
+            </div>
+            <div *ngIf="celsius == 1">{{item.temp}} °C</div>
+            <div *ngIf="celsius == 2">{{(item.temp * 1.8) + 32}} °F</div>
+            <div>{{item.tipo}}</div>
+        </li>
+    </ul>
+</div>

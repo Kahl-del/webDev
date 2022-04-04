@@ -1,0 +1,19 @@
+#dias{
+    display: flex;
+   flex-wrap: wrap;
+   list-style-type: none;
+}
+
+#dias li{
+    width: 120px;
+    height: 120px;
+}
+
+#dias li img{
+    width: 60px;
+    height: 60px;
+}
+
+#tipotemp{
+    text-align: right;
+}
